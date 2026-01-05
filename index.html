@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en"> 
 <head>
   <meta charset="utf-8" />
@@ -23,6 +23,7 @@
 
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
+
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
@@ -57,12 +58,18 @@
     }
     .brand .name{font-weight:900;font-size:16px}
     .brand .loc{font-size:12px;color:var(--muted)}
+
     .actions{display:flex;gap:10px}
 
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      gap:8px;padding:12px 14px;border-radius:999px;
-      font-weight:850;border:1px solid rgba(255,255,255,.12);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 14px;
+      border-radius:999px;
+      font-weight:850;
+      border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.06);
       white-space:nowrap;
     }
@@ -88,14 +95,32 @@
     ul{padding-left:18px;margin-top:10px}
     li{margin:7px 0;color:var(--muted)}
 
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-    .figure img{width:100%;height:260px;object-fit:cover}
-    .cap{text-align:center;padding:10px;color:var(--muted);font-weight:700}
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    .figure img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+    }
+    .cap{
+      text-align:center;
+      padding:10px;
+      color:var(--muted);
+      font-weight:700;
+    }
 
-    /* ---------- BOTTOM CTA (FIXED) ---------- */
+    /* ---------- FIXED BOTTOM CTA ---------- */
     .bottom-cta{
-      position:fixed;left:0;right:0;bottom:0;z-index:60;
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:60;
+      padding:10px 12px;
       background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
       border-top:1px solid rgba(255,255,255,.08);
     }
@@ -105,15 +130,9 @@
       display:flex;
       gap:10px;
     }
-    .bottom-cta .inner + .inner{
-      margin-top:10px;
-    }
     .bottom-cta a{flex:1}
 
-    .bottom-cta .btn.yelp{ border-color:#e11d48; }
-    .bottom-cta .btn.nextdoor{ border-color:#22c55e; }
-
-    .spacer{height:160px}
+    .spacer{height:90px}
 
     /* ---------- MOBILE ---------- */
     @media (max-width:900px){
@@ -180,13 +199,6 @@
   <div class="inner">
     <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
     <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
-  </div>
-
-  <div class="inner">
-    <a class="btn yelp" href="https://yelp.to/uWort4gJYo" target="_blank" rel="noopener">Yelp</a>
-    <a class="btn nextdoor"
-       href="https://nextdoor.com/page/3d-appliance-repair-las-vegas-nv?utm_campaign=1767623094158&share_action_id=338f846d-e317-4b4a-afbf-5f3c2f45b2fd"
-       target="_blank" rel="noopener">Nextdoor</a>
   </div>
 </div>
 
