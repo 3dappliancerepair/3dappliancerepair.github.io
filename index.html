@@ -4,37 +4,363 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D Appliance Repair | Las Vegas</title>
-  <meta name="description" content="Fast, reliable appliance repair in Las Vegas. Call (725) 800-2293 for same-day or next-day service." />
+  <meta name="description" content="Reliable, affordable appliance repair throughout Las Vegas & surrounding areas. Call (725) 800-2293." />
 
   <style>
     :root{
-      --bg:#0b1220;
-      --card:#0f1a33;
-      --text:#e8eefc;
-      --muted:#b7c3e6;
-      --brand:#4f8cff;
-      --brand2:#22c55e;
+      --bg:#070b14;
+      --panel:#0c1427;
+      --card:rgba(255,255,255,.06);
       --line:rgba(255,255,255,.12);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --text:#eef2ff;
+      --muted:#b9c3df;
+      --red:#e11d2e;
+      --red2:#ff3b30;
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
       --radius:18px;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 600px at 20% -10%, rgba(79,140,255,.35), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(34,197,94,.25), transparent 55%),
-        linear-gradient(180deg, #070b14, var(--bg));
+        radial-gradient(1000px 650px at 18% -10%, rgba(225,29,46,.35), transparent 60%),
+        radial-gradient(900px 600px at 95% 10%, rgba(255,59,48,.18), transparent 55%),
+        radial-gradient(900px 600px at 40% 120%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, #05070e, var(--bg));
       min-height:100vh;
     }
+
     a{color:inherit}
-    .container{max-width:980px;margin:0 auto;padding:22px}
+    img{max-width:100%; display:block}
+
+    .container{max-width:1060px; margin:0 auto; padding:20px}
     .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:12px;padding:10px 0;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:12px 0;
     }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+    }
+    .brand img{
+      width:54px; height:54px; object-fit:contain;
+      border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:8px;
+    }
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.1;
+    }
+    .brand .name strong{font-size:16px; letter-spacing:.2px}
+    .brand .name span{font-size:12px; color:var(--muted)}
+
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      font-weight:800;
+    }
+    .btn.red{
+      background: linear-gradient(180deg, rgba(225,29,46,.95), rgba(225,29,46,.75));
+      border-color: rgba(225,29,46,.6);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      padding:18px;
+    }
+    @media (max-width:900px){ .hero-inner{grid-template-columns:1fr} }
+
+    h1{margin:0 0 10px; font-size:38px; line-height:1.08}
+    .sub{margin:0 0 14px; color:var(--muted); line-height:1.6}
+
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{
+      font-size:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+    }
+
+    .media{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.15);
+      position:relative;
+    }
+    .media img{width:100%; height:100%; object-fit:cover}
+    .media .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55));
+      pointer-events:none;
+    }
+    .media .tag{
+      position:absolute; left:12px; bottom:12px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.45);
+      font-weight:800;
+      font-size:12px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .card{
+      grid-column: span 4;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: 16px;
+      padding:16px;
+    }
+    @media (max-width:900px){ .card{grid-column:span 12} }
+
+    .kicker{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.18em}
+    .title{font-size:18px; margin:8px 0 8px; font-weight:900}
+    ul{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); line-height:1.7}
+
+    .two{
+      grid-column: span 6;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      border-radius: 16px;
+      overflow:hidden;
+    }
+    @media (max-width:900px){ .two{grid-column:span 12} }
+
+    .two .pad{padding:16px}
+    .two img{width:100%; height:260px; object-fit:cover}
+    @media (max-width:900px){ .two img{height:220px} }
+
+    .brands{
+      margin-top:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .brands img{
+      max-height:92px;
+      width:auto;
+      opacity:.95;
+      filter: grayscale(10%) contrast(1.05);
+    }
+
+    .footer{
+      margin:18px 0 12px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    .sticky-call{
+      position:fixed;
+      left:14px; right:14px; bottom:14px;
+      display:none;
+      z-index:50;
+    }
+    @media (max-width:900px){
+      .sticky-call{display:block;}
+      body{padding-bottom:78px;}
+      .sticky-call a{
+        width:100%;
+        box-shadow:0 18px 45px rgba(0,0,0,.55);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="#">
+        <img src="assets/logo.png" alt="3D Appliance Repair logo" />
+        <div class="name">
+          <strong>3D Appliance Repair</strong>
+          <span>Service that stands out • Las Vegas</span>
+        </div>
+      </a>
+
+      <div class="cta">
+        <a class="btn red" href="tel:17258002293">📞 Call (725) 800-2293</a>
+        <a class="btn ghost" href="sms:17258002293">💬 Text</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>Reliable, affordable appliance repair in Las Vegas</h1>
+          <p class="sub">
+            Fast response. Honest pricing. Quality work you can trust.
+            We service most major brands and handle diagnostics to full repairs.
+          </p>
+
+          <div class="cta" style="margin-top:10px">
+            <a class="btn red" href="tel:17258002293">Call Now</a>
+            <a class="btn ghost" href="#coupon">Get $25 Off</a>
+            <a class="btn ghost" href="#services">Services</a>
+          </div>
+
+          <div class="pillrow">
+            <span class="pill">Same-day / Next-day (when available)</span>
+            <span class="pill">Las Vegas & surrounding areas</span>
+            <span class="pill">Licensed/Insured (if applicable)</span>
+          </div>
+
+          <div class="grid" style="margin-top:14px">
+            <div class="card" style="grid-column:span 12">
+              <div class="kicker">Hours</div>
+              <div class="title" style="margin:8px 0 6px">Mon–Sat: 8:00 AM – 5:00 PM</div>
+              <div style="color:var(--muted);line-height:1.7">Sunday: Off</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="media" aria-label="Hero image">
+          <img src="assets/hero.jpg" alt="3D Appliance Repair Las Vegas service graphic" />
+          <div class="overlay"></div>
+          <div class="tag">Serving Las Vegas & Nearby</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="services" aria-label="Services">
+      <div class="card">
+        <div class="kicker">Service</div>
+        <div class="title">Refrigerators</div>
+        <ul>
+          <li>Not cooling</li>
+          <li>Leaks / noises</li>
+          <li>Ice maker issues</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Service</div>
+        <div class="title">Washers & Dryers</div>
+        <ul>
+          <li>Not draining / not spinning</li>
+          <li>Dryer not heating</li>
+          <li>Vibration / error codes</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Service</div>
+        <div class="title">Ovens / Ranges</div>
+        <ul>
+          <li>Not heating properly</li>
+          <li>Igniter / burner problems</li>
+          <li>Controls / power issues</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Service</div>
+        <div class="title">Dishwashers</div>
+        <ul>
+          <li>Not cleaning</li>
+          <li>Won’t drain</li>
+          <li>Leaks</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Also</div>
+        <div class="title">More Services</div>
+        <ul>
+          <li>Garbage disposals</li>
+          <li>Dryer vent cleanings</li>
+          <li>Diagnostics to full repairs</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Contact</div>
+        <div class="title">Book Service</div>
+        <div style="color:var(--muted);line-height:1.9">
+          Phone: <a href="tel:17258002293" style="text-decoration:underline;">(725) 800-2293</a><br>
+          Email: <a href="mailto:3dappliancerepairlv@gmail.com" style="text-decoration:underline;">3dappliancerepairlv@gmail.com</a><br>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Gallery">
+      <div class="two">
+        <img src="assets/van.jpg" alt="3D Appliance Repair service van" />
+        <div class="pad">
+          <div class="kicker">On the go</div>
+          <div class="title">We come to you</div>
+          <div style="color:var(--muted);line-height:1.7">
+            Fast scheduling and professional service across Las Vegas and surrounding areas.
+          </div>
+        </div>
+      </div>
+
+      <div class="two" id="coupon">
+        <img src="assets/coupon.jpg" alt="$25 off repairs coupon" />
+        <div class="pad">
+          <div class="kicker">Special</div>
+          <div class="title">$25 Off Repairs</div>
+          <div style="color:var(--muted);line-height:1.7">
+            First-time clients only. Coupon must be presented. Terms may apply.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands" aria-label="Brands we service">
+      <img src="assets/brands.png" alt="Major brands serviced" />
+    </section>
+
+    <div class="footer">
+      © <span id="yr"></span> 3D Appliance Repair • Las Vegas, NV
+    </div>
+  </div>
+
+  <div class="sticky-call">
+    <a class="btn red" href="tel:17258002293">📞 Call (725) 800-2293</a>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>    }
     .logo{
       display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px
     }
