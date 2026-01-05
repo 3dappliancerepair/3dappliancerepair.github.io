@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Business Name</title>
+</head>
+<body style="font-family: Arial; max-width: 800px; margin: 40px auto; line-height: 1.5;">
+  <h1>Your Business Name</h1>
+  <p><b>Call:</b> <a href="tel:7025551234">(702) 555-1234</a></p>
+  <p><b>Service Area:</b> Las Vegas & surrounding areas</p>
+
+  <h2>Services</h2>
+  <ul>
+    <li>Refrigerator repair</li>
+    <li>Washer & dryer repair</li>
+    <li>Oven / range repair</li>
+    <li>Dishwasher repair</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p>Hours: Mon–Sat 8am–6pm</p>
+</body>
+</html>
