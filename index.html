@@ -40,25 +40,21 @@
     /* ---------- HEADER ---------- */
     .topbar{
       position:sticky;top:0;z-index:50;
-      background:linear-gradient(180deg, rgba(7,11,20,.92), rgba(7,11,20,.72));
+      background:linear-gradient(180deg, rgba(7,11,20,.96), rgba(7,11,20,.82));
       border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
     .topbar-inner{
       display:flex;align-items:center;justify-content:space-between;
       gap:12px;padding:12px 0;
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;min-width:0;
-    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
     .brand img{
       width:56px;height:56px;object-fit:cover;border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
     }
-    .brand .title{
-      display:flex;flex-direction:column;min-width:0;
-    }
+    .brand .title{display:flex;flex-direction:column;min-width:0}
     .brand .name{
       font-weight:900;letter-spacing:.4px;font-size:16px;line-height:1.1;
       white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw;
@@ -94,66 +90,87 @@
       background:#000;
       position:relative;
     }
+
+    /* Background image */
     .hero::before{
       content:"";
       position:absolute;inset:0;
-      background:
-        linear-gradient(90deg, rgba(7,11,20,.92) 0%, rgba(7,11,20,.75) 45%, rgba(7,11,20,.35) 100%),
-        url("assets/hero.png");
+      background:url("assets/hero.png");
       background-size:cover;
       background-position:center;
       transform:scale(1.02);
       filter:saturate(1.05) contrast(1.02);
     }
+
+    /* Dark overlay + subtle blur so text is readable */
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(900px 500px at 20% 20%, rgba(225,29,72,.30), transparent 55%),
+        linear-gradient(180deg, rgba(7,11,20,.88) 0%, rgba(7,11,20,.78) 45%, rgba(7,11,20,.92) 100%),
+        linear-gradient(90deg, rgba(7,11,20,.88) 0%, rgba(7,11,20,.70) 55%, rgba(7,11,20,.55) 100%);
+      backdrop-filter: blur(3px);
+    }
+
     .hero-inner{
       position:relative;
       padding:26px;
       display:grid;
       grid-template-columns: 1.1fr .9fr;
       gap:18px;
-      align-items:center;
+      align-items:end;
+      z-index:1;
     }
+
     .hero h1{
-      font-size:46px;line-height:1.03;
+      font-size:44px;line-height:1.04;
       letter-spacing:-.6px;
       margin-bottom:10px;
+      text-shadow:0 10px 40px rgba(0,0,0,.45);
     }
     .hero p{
-      color:var(--muted);
+      color:rgba(238,242,255,.80);
       font-size:16px;line-height:1.65;
-      max-width:52ch;
+      max-width:56ch;
+      text-shadow:0 10px 40px rgba(0,0,0,.35);
     }
+
+    /* pills + buttons aligned and not scattered */
     .pill-row{
       display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;
+      justify-content:flex-start;
     }
     .pill{
       padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      color:rgba(238,242,255,.80);
-      font-weight:750;font-size:13px;
-      backdrop-filter: blur(8px);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.08);
+      color:rgba(238,242,255,.86);
+      font-weight:800;font-size:13px;
+      backdrop-filter: blur(10px);
     }
+
     .cta-row{
       display:flex;flex-wrap:wrap;gap:12px;
       margin-top:18px;
+      align-items:center;
     }
 
     .hero-card{
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
       background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
       border-radius:22px;
       padding:18px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
     .hero-card h3{font-size:16px;margin-bottom:8px}
     .hero-card .list{
-      display:grid;gap:10px;margin-top:10px;color:rgba(238,242,255,.82);
-      font-weight:650;
+      display:grid;gap:10px;margin-top:10px;
+      color:rgba(238,242,255,.86);
+      font-weight:750;
     }
     .check{display:flex;gap:10px;align-items:flex-start}
-    .check span:first-child{opacity:.95}
-    .check span:last-child{color:var(--muted);font-weight:650}
+    .check span:last-child{color:rgba(238,242,255,.78);font-weight:700}
 
     /* ---------- SECTIONS ---------- */
     .section{
@@ -165,7 +182,6 @@
       overflow:hidden;
     }
     .pad{padding:18px}
-
     .section h2{font-size:26px;margin-bottom:10px}
     .sub{color:var(--muted);line-height:1.65}
 
@@ -177,12 +193,11 @@
       background:rgba(255,255,255,.03);
     }
     .figure img{width:100%;height:260px;object-fit:cover}
-    .cap{padding:12px;color:var(--muted);font-weight:750;font-size:13px}
+    .cap{padding:12px;color:var(--muted);font-weight:800;font-size:13px}
 
     ul{padding-left:18px;margin-top:10px}
     li{margin:7px 0;color:var(--muted)}
 
-    /* brands/coupon image styling */
     .img-frame{
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.03);
@@ -194,9 +209,9 @@
     .bottom-cta{
       position:fixed;left:0;right:0;bottom:0;z-index:60;
       padding:10px 12px;
-      background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
+      background:linear-gradient(180deg, rgba(7,11,20,.10), rgba(7,11,20,.92));
       border-top:1px solid rgba(255,255,255,.08);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
     .bottom-cta .inner{
       max-width:var(--max);margin:0 auto;
@@ -204,19 +219,14 @@
     }
     .bottom-cta .inner a{flex:1}
 
-    .spacer{height:88px} /* so fixed CTA doesn't cover content */
+    .spacer{height:92px}
 
     /* ---------- MOBILE ---------- */
     @media (max-width:900px){
       .hero-inner{grid-template-columns:1fr}
-      .hero::before{
-        background:
-          linear-gradient(180deg, rgba(7,11,20,.88) 0%, rgba(7,11,20,.62) 55%, rgba(7,11,20,.75) 100%),
-          url("assets/hero.png");
-        background-size:cover;background-position:center;
-      }
       .hero h1{font-size:38px}
       .figure img{height:240px}
+      .hero-card{margin-top:6px}
     }
     @media (max-width:520px){
       .brand img{width:50px;height:50px}
@@ -225,6 +235,10 @@
       .hero h1{font-size:34px}
       .grid2{grid-template-columns:1fr}
       .figure img{height:220px}
+
+      /* KEY FIX: hide bottom sticky bar on mobile so it doesn't cover the hero */
+      .bottom-cta{display:none}
+      .spacer{height:22px}
     }
   </style>
 </head>
@@ -252,7 +266,7 @@
 
   <main class="wrap">
 
-    <!-- HERO (visual flow) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <div>
@@ -282,7 +296,7 @@
             <div class="check"><span>✅</span><span>Honest pricing (no surprises)</span></div>
             <div class="check"><span>✅</span><span>Quality work you can trust</span></div>
           </div>
-          <div style="margin-top:14px;color:var(--muted);font-weight:750;font-size:13px;">
+          <div style="margin-top:14px;color:rgba(238,242,255,.78);font-weight:800;font-size:13px;">
             Serving Las Vegas, Henderson & surrounding areas.
           </div>
         </div>
@@ -305,7 +319,7 @@
       </div>
     </section>
 
-    <!-- PHOTOS (flow with captions) -->
+    <!-- PHOTOS -->
     <section class="grid2">
       <div class="section figure">
         <img src="assets/van.png" alt="3D Appliance Repair service van">
@@ -317,7 +331,7 @@
       </div>
     </section>
 
-    <!-- COUPON (strong callout) -->
+    <!-- COUPON -->
     <section id="coupon" class="section">
       <div class="pad" style="text-align:center">
         <h2>$25 Off Repairs</h2>
@@ -363,7 +377,7 @@
           <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ 3dappliancerepairlv@gmail.com</a>
           <a class="btn primary" href="tel:17258002293">📞 (725) 800-2293</a>
         </div>
-        <div style="margin-top:12px;color:var(--muted);font-size:13px;font-weight:700">
+        <div style="margin-top:12px;color:var(--muted);font-size:13px;font-weight:800">
           © 2026 3D Appliance Repair · Las Vegas, NV
         </div>
       </div>
@@ -372,7 +386,7 @@
     <div class="spacer"></div>
   </main>
 
-  <!-- BOTTOM CTA -->
+  <!-- Bottom CTA (desktop only; hidden on mobile in CSS) -->
   <div class="bottom-cta">
     <div class="inner">
       <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
