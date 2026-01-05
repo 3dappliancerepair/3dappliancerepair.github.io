@@ -1,253 +1,417 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>3D Appliance Repair | Las Vegas, NV</title>
-<meta name="description" content="Fast, reliable appliance repair in Las Vegas. Call (725) 800-2293.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>3D Appliance Repair | Las Vegas, NV</title>
+  <meta name="description" content="Fast, reliable appliance repair in Las Vegas & surrounding areas. Call (725) 800-2293." />
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:linear-gradient(180deg,#050711,#0b1220);
-  color:#eef2ff;
-}
-:root{
-  --line:rgba(255,255,255,.12);
-  --card:rgba(255,255,255,.06);
-  --muted:#b9c2df;
-  --red:#e11d48;
-  --blue:#4f8cff;
-  --green:#22c55e;
-  --radius:18px;
-  --shadow:0 20px 50px rgba(0,0,0,.5);
-}
-.wrap{max-width:1100px;margin:auto;padding:18px 14px 100px}
+  <style>
+    :root{
+      --bg:#070b14;
+      --panel:#0c1427;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --text:#eef2ff;
+      --muted:#b9c3d9;
+      --accent:#e11d48;     /* red */
+      --accent2:#3b82f6;    /* blue */
+      --success:#22c55e;
+      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --radius:20px;
+      --max:1100px;
+    }
 
-/* HEADER */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  padding:14px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{width:48px;height:48px;border-radius:12px}
-.brand b{font-size:18px}
-.brand span{font-size:13px;color:var(--muted)}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(225,29,72,.22), transparent 60%),
+        radial-gradient(900px 500px at 85% 15%, rgba(59,130,246,.18), transparent 60%),
+        radial-gradient(700px 420px at 50% 100%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, #04060d, var(--bg));
+      line-height:1.5;
+    }
 
-.actions{display:flex;gap:10px;flex-wrap:wrap}
-.btn{
-  padding:10px 14px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.05);
-  text-decoration:none;
-  font-weight:800;
-  color:#fff;
-}
-.btn.red{background:linear-gradient(180deg,#e11d48,#b3123a)}
-.btn.blue{background:linear-gradient(180deg,#4f8cff,#3765cc)}
-.btn.green{background:linear-gradient(180deg,#22c55e,#179c46);color:#02150a}
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px 16px 80px}
 
-/* HERO */
-.hero{
-  margin-top:18px;
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.hero-inner{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:18px;
-  padding:22px;
-}
-.hero h1{margin:0 0 10px;font-size:42px}
-.hero p{margin:0 0 16px;color:var(--muted);line-height:1.6}
-.hero img{width:100%;border-radius:14px}
+    /* Top bar */
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      padding:14px 14px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      position:sticky; top:12px; z-index:10;
+      backdrop-filter: blur(10px);
+    }
 
-.badges{display:flex;gap:10px;flex-wrap:wrap}
-.badges span{
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.04);
-  padding:6px 10px;
-  border-radius:999px;
-  font-size:12px;
-}
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width:0;
+    }
+    .brand img{
+      width:44px; height:44px; object-fit:contain;
+      border-radius:12px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      padding:6px;
+    }
+    .brand .title{
+      display:flex; flex-direction:column; gap:2px; min-width:0;
+    }
+    .brand .title strong{
+      font-size:14px; letter-spacing:.3px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brand .title span{
+      color:var(--muted); font-size:12px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
 
-/* GRID */
-.grid{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-.card{
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:16px;
-  box-shadow:var(--shadow);
-}
-.card h2{margin-top:0}
-.card ul{padding-left:18px;color:var(--muted);line-height:1.7}
+    .top-actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      text-decoration:none;
+      font-weight:750;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08)}
+    .btn.primary{
+      background:linear-gradient(180deg, rgba(225,29,72,.95), rgba(225,29,72,.75));
+      border-color:rgba(225,29,72,.55);
+    }
+    .btn.primary:hover{background:linear-gradient(180deg, rgba(225,29,72,1), rgba(225,29,72,.78))}
+    .btn.outline{
+      background:rgba(59,130,246,.08);
+      border-color:rgba(59,130,246,.35);
+    }
 
-/* IMAGES */
-.gallery{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-.gallery img{
-  width:100%;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-}
+    /* Hero */
+    .hero{
+      margin-top:14px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      padding:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-inner{grid-template-columns:1fr}
+      header{position:static}
+    }
 
-/* COUPON */
-.coupon{
-  margin-top:18px;
-  border:1px solid rgba(225,29,72,.5);
-  background:linear-gradient(180deg,rgba(225,29,72,.2),rgba(255,255,255,.04));
-}
-.coupon h2{margin:0 0 6px}
-.coupon p{margin:0;color:var(--muted)}
+    .hero-copy h1{
+      margin:0 0 10px;
+      font-size:42px;
+      line-height:1.06;
+      letter-spacing:.2px;
+    }
+    .hero-copy p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:58ch;
+    }
 
-/* FOOTER */
-footer{
-  margin-top:24px;
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
-}
-footer img{width:140px;margin-bottom:10px}
+    .badges{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .badge{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+    }
 
-/* STICKY CALL */
-.sticky{
-  position:fixed;
-  bottom:14px;
-  left:14px;
-  right:14px;
-  display:flex;
-  justify-content:center;
-}
-.sticky a{
-  width:100%;
-  max-width:520px;
-  text-align:center;
-  padding:16px;
-  border-radius:18px;
-  background:linear-gradient(180deg,#e11d48,#b3123a);
-  color:#fff;
-  font-weight:900;
-  text-decoration:none;
-  box-shadow:0 25px 60px rgba(0,0,0,.6);
-}
+    .hero-media{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      position:relative;
+      min-height:240px;
+    }
+    .hero-media img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.02) contrast(1.03);
+    }
+    .hero-media::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.55));
+      pointer-events:none;
+    }
+    .hero-media .tag{
+      position:absolute; left:14px; bottom:14px;
+      z-index:2;
+      background:rgba(7,11,20,.55);
+      border:1px solid rgba(255,255,255,.14);
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:12px;
+    }
 
-/* MOBILE */
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
-  .hero h1{font-size:36px}
-}
-</style>
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card .pad{padding:18px}
+    .card h2{margin:0 0 10px; font-size:20px}
+    .card p{margin:0; color:var(--muted)}
+    .list{
+      margin:12px 0 0;
+      padding:0 0 0 18px;
+      color:var(--text);
+    }
+    .list li{margin:8px 0}
+    .muted{color:var(--muted)}
+
+    .media{
+      width:100%;
+      display:block;
+      aspect-ratio: 16 / 9;
+      object-fit:cover;
+      background:rgba(255,255,255,.04);
+      border-top:1px solid var(--line);
+    }
+    .media.contain{
+      object-fit:contain;
+      background:rgba(255,255,255,.03);
+      padding:12px;
+      aspect-ratio: 16/7;
+    }
+
+    /* Coupon */
+    .coupon{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .coupon .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      width:max-content;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px dashed rgba(255,255,255,.25);
+      background:rgba(225,29,72,.12);
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+
+    /* Bottom sticky CTA */
+    .sticky-cta{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      padding:10px 12px 14px;
+      background:linear-gradient(180deg, rgba(7,11,20,0), rgba(7,11,20,.85) 30%, rgba(7,11,20,.98));
+      z-index:20;
+    }
+    .sticky-cta .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .sticky-cta a{
+      flex:1 1 230px;
+      max-width:520px;
+      text-align:center;
+      font-size:18px;
+      border-radius:16px;
+      padding:14px 16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.45);
+    }
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:10px 0 60px;
+    }
+
+    /* Small tweaks */
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width: 520px){
+      .hero-copy h1{font-size:34px}
+      .two-col{grid-template-columns:1fr}
+    }
+    .kv{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      padding:12px;
+    }
+    .kv strong{display:block; font-size:12px; color:var(--muted); letter-spacing:.25px; text-transform:uppercase}
+    .kv span{display:block; margin-top:4px; font-weight:800}
+  </style>
 </head>
 
 <body>
-<div class="wrap">
-
-  <div class="header">
-    <div class="brand">
-      <img src="assets/logo.png" alt="3D Appliance Repair">
-      <div>
-        <b>3D Appliance Repair</b><br>
-        <span>Las Vegas, NV</span>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- Option B: use your /assets filenames exactly -->
+        <img src="assets/logo.png" alt="3D Appliance Repair Logo" />
+        <div class="title">
+          <strong>3D Appliance Repair</strong>
+          <span>Las Vegas & surrounding areas</span>
+        </div>
       </div>
-    </div>
-    <div class="actions">
-      <a class="btn red" href="tel:17258002293">Call Now</a>
-      <a class="btn blue" href="sms:17258002293">Text</a>
-      <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">Email</a>
+
+      <div class="top-actions">
+        <a class="btn outline" href="mailto:3dappliancerepairlv@gmail.com">Email Us</a>
+        <a class="btn primary" href="tel:17258002293">Call (725) 800-2293</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Reliable, Affordable Appliance Repair</h1>
+          <p>
+            Fast response, honest pricing, and quality work you can trust.
+            We service most major brands throughout Las Vegas & surrounding areas.
+          </p>
+
+          <div class="badges">
+            <div class="badge">Same-day / next-day availability</div>
+            <div class="badge">Diagnostics to full repairs</div>
+            <div class="badge">Refrigerators • Washers • Dryers • Ovens • Dishwashers</div>
+          </div>
+
+          <div class="two-col">
+            <div class="kv">
+              <strong>Hours</strong>
+              <span>Mon–Sat: 8:00 AM – 5:00 PM</span>
+              <span class="muted" style="font-weight:700;margin-top:6px">Sunday: Off</span>
+            </div>
+            <div class="kv">
+              <strong>Call now</strong>
+              <span><a href="tel:17258002293" style="text-decoration:none">(725) 800-2293</a></span>
+              <span class="muted" style="font-weight:700;margin-top:6px">Las Vegas, NV</span>
+            </div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn primary" href="tel:17258002293">Get Service Now</a>
+            <a class="btn" href="#special">See $25 Off Special</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <img src="assets/hero.png" alt="Appliance Repair Las Vegas" />
+          <div class="tag">Service that stands out</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="pad">
+          <h2>Services</h2>
+          <p class="muted">We repair and service all major household appliances.</p>
+          <ul class="list">
+            <li>Refrigerator Repair</li>
+            <li>Washer & Dryer Repair</li>
+            <li>Oven & Range Repair</li>
+            <li>Dishwasher Repair</li>
+            <li>Garbage Disposals</li>
+            <li>Dryer Vent Cleanings</li>
+          </ul>
+        </div>
+        <img class="media" src="assets/van.png" alt="3D Appliance Repair service van" />
+      </div>
+
+      <div class="card">
+        <div class="pad">
+          <h2>We service most major brands</h2>
+          <p class="muted">If it’s a major brand, we can usually fix it.</p>
+        </div>
+        <img class="media contain" src="assets/brands.png" alt="Appliance brands we service" />
+      </div>
+    </section>
+
+    <section class="grid" id="special">
+      <div class="card">
+        <div class="pad coupon">
+          <div class="pill">SPECIAL</div>
+          <h2 style="margin:0">$25 Off Repairs</h2>
+          <p>First-time clients only. Coupon must be presented. Terms may apply.</p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+            <a class="btn primary" href="tel:17258002293">Redeem by Calling</a>
+            <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">Ask a Question</a>
+          </div>
+        </div>
+        <img class="media" src="assets/coupon.png" alt="$25 off coupon" />
+      </div>
+
+      <div class="card">
+        <div class="pad">
+          <h2>Friendly, professional service</h2>
+          <p class="muted">We show up on time, explain the issue clearly, and get it fixed right.</p>
+        </div>
+        <img class="media" src="assets/technician.png" alt="Technician helping customer" />
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> 3D Appliance Repair · Las Vegas, NV
+    </footer>
+  </div>
+
+  <div class="sticky-cta">
+    <div class="inner">
+      <a class="btn primary" href="tel:17258002293">Call (725) 800-2293</a>
+      <a class="btn outline" href="mailto:3dappliancerepairlv@gmail.com">Email 3dappliancerepairlv@gmail.com</a>
     </div>
   </div>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <h1>Reliable Appliance Repair You Can Trust</h1>
-        <p>Fast, affordable appliance repair throughout Las Vegas & surrounding areas.</p>
-
-        <div class="badges">
-          <span>✔ Refrigerators</span>
-          <span>✔ Washers & Dryers</span>
-          <span>✔ Ovens & Ranges</span>
-          <span>✔ Dishwashers</span>
-        </div>
-
-        <p style="margin-top:12px">
-          <b>Hours:</b> Mon–Sat <b>8:00am – 5:00pm</b><br>
-          Sunday: <b>Closed</b>
-        </p>
-      </div>
-
-      <img src="assets/hero.jpg" alt="Las Vegas appliance repair">
-    </div>
-  </section>
-
-  <section class="grid">
-    <div class="card">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Refrigerator & Freezer Repair</li>
-        <li>Washer & Dryer Repair</li>
-        <li>Oven, Range & Stove Repair</li>
-        <li>Dishwasher Repair</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Why Choose Us</h2>
-      <ul>
-        <li>Fast Response</li>
-        <li>Honest Pricing</li>
-        <li>Quality Work You Can Trust</li>
-      </ul>
-    </div>
-
-    <div class="card coupon">
-      <h2>$25 Off Repairs</h2>
-      <p>First-time clients only. Coupon must be presented. Terms may apply.</p>
-      <img src="assets/coupon.jpg" style="margin-top:10px;width:100%;border-radius:14px">
-    </div>
-  </section>
-
-  <section class="gallery">
-    <img src="assets/brands.png" alt="Appliance brands serviced">
-    <img src="assets/van.jpg" alt="Service van">
-    <img src="assets/technician.jpg" alt="Technician at work">
-  </section>
-
-  <footer>
-    <img src="assets/logo.png" alt="3D Appliance Repair logo">
-    <div>© 2026 3D Appliance Repair • Las Vegas, NV</div>
-  </footer>
-
-</div>
-
-<div class="sticky">
-  <a href="tel:17258002293">📞 Call (725) 800-2293</a>
-</div>
-
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
