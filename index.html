@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -185,11 +185,29 @@
 
     /* ---------- MOBILE ---------- */
     @media (max-width:900px){
-      .hero-inner{grid-template-columns:1fr}
-      .hero h1{font-size:38px}
-      .grid2{grid-template-columns:1fr}
-      .figure img{height:220px}
-    }
+  .hero-inner{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+  .grid2{grid-template-columns:1fr}
+  .figure img{height:220px}
+} /* <-- this closes mobile rules */
+    /* ---------- TRUSTPILOT SECTION ---------- */
+.tru/* ---------- TRUSTPILOT SECTION ---------- */
+.trustpilot-section{
+  margin:0 auto;
+  padding:0;
+  display:flex;
+  justify-content:center;
+  position:relative;
+  top:22px;              /* pushes badge DOWN into the spacer gap */
+}
+
+.trustpilot-section img{
+  display:block;
+  height:64px;
+  width:auto;
+  margin:0;
+  filter:drop-shadow(0 6px 18px rgba(0,0,0,.55));
+}
   </style>
 </head>
 
@@ -273,31 +291,10 @@
     <div class="cap">Professional, friendly in-home service</div>
   </div>
 </section>
-/* ---------- TRUSTPILOT SECTION ---------- */
-.trustpilot-section{
-  margin:12px auto 0;   /* reduced top spacing */
-  padding:0;            /* remove internal padding */
-  display:flex;
-  justify-content:center;
-}
-
-.trustpilot-section img{
-  display:block;
-  height:42px;
-  width:auto;
-  margin:0;             /* remove image margin */
-  opacity:0.95;
-  filter:drop-shadow(0 6px 18px rgba(0,0,0,.55));
-}
-
-@media (max-width:520px){
-  .trustpilot-section{
-    margin:10px auto 0;
-  }
-  .trustpilot-section img{
-    height:36px;
-  }
-}
+  <!-- TRUSTPILOT REVIEWS -->
+<section class="trustpilot-section">
+  <img src="assets/trustpilot.png" alt="Trustpilot Reviews">
+</section>
 <div class="spacer"></div>
 </main>
 
