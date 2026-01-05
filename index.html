@@ -95,15 +95,14 @@
       position:relative;
     }
     .hero::before{
-      content:"";
-      position:absolute;inset:0;
-      background:
-        linear-gradient(90deg, rgba(7,11,20,.92) 0%, rgba(7,11,20,.75) 45%, rgba(7,11,20,.35) 100%),
-        url("assets/hero.png");
-      background-size:cover;
-      background-position:center;
-      transform:scale(1.02);
-      filter:saturate(1.05) contrast(1.02);
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(700px 400px at 20% 10%, rgba(225,29,72,.25), transparent 60%),
+    radial-gradient(700px 400px at 90% 20%, rgba(59,130,246,.18), transparent 60%),
+    linear-gradient(180deg, #05070f, #070b14);
+}
     }
     .hero-inner{
       position:relative;
