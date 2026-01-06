@@ -130,7 +130,7 @@
       margin-top:18px;justify-content:center;
     }
 
-    /* ✅ ONLY ADDED CSS */
+    /* ONLY ADDED: keep Yelp + Nextdoor side-by-side */
     .social-row{
       display:flex;
       gap:12px;
@@ -167,14 +167,35 @@
     .figure img{width:100%;height:260px;object-fit:cover}
     .cap{text-align:center;padding:10px;color:var(--muted);font-weight:700}
 
+    .img-frame{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      overflow:hidden;
+    }
+
+    /* ---------- BOTTOM CTA ---------- */
+    .bottom-cta{
+      position:fixed;left:0;right:0;bottom:0;z-index:60;
+      padding:10px 12px;
+      background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .bottom-cta .inner{
+      max-width:var(--max);margin:0 auto;
+      display:flex;gap:10px;
+    }
+    .bottom-cta a{flex:1}
+
     .spacer{height:90px}
 
+    /* ---------- MOBILE ---------- */
     @media (max-width:900px){
-      .hero-inner{grid-template-columns:1fr}
-      .hero h1{font-size:38px}
-      .grid2{grid-template-columns:1fr}
-      .figure img{height:220px}
-    }
+  .hero-inner{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+  .grid2{grid-template-columns:1fr}
+  .figure img{height:220px}
+} /* <-- this closes mobile rules */
   </style>
 </head>
 
@@ -215,7 +236,7 @@
       <div class="cta-row">
         <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
 
-        <!-- ✅ ONLY ADDED HTML -->
+        <!-- ONLY ADDED: Yelp + Nextdoor buttons -->
         <div class="social-row">
           <a class="btn" href="https://yelp.to/vCpOrAb_g_" target="_blank" rel="noopener">Yelp</a>
           <a class="btn" href="http://Tinyurl.com/3DApplianceRepair" target="_blank" rel="noopener">Nextdoor</a>
@@ -238,7 +259,43 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="pad">
+    <h2>Services</h2>
+    <p class="sub">We repair and service all major household appliances.</p>
+    <ul>
+      <li>Refrigerator Repair</li>
+      <li>Washer & Dryer Repair</li>
+      <li>Oven & Range Repair</li>
+      <li>Dishwasher Repair</li>
+      <li>Garbage Disposals</li>
+      <li>Dryer Vent Cleanings</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICE PHOTOS -->
+<section class="grid2">
+  <div class="section figure">
+    <img src="assets/van.png" alt="3D Appliance Repair service van">
+    <div class="cap">Text message for rapid response</div>
+  </div>
+
+  <div class="section figure">
+    <img src="assets/technician.png" alt="Appliance repair technician helping a customer">
+    <div class="cap">Professional, friendly in-home service</div>
+  </div>
+</section>
+  
+<div class="spacer"></div>
 </main>
 
+<div class="bottom-cta">
+  <div class="inner">
+    <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
+    <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
+  </div>
+</div>
 </body>
 </html>
