@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Washer & Dryer Repair Las Vegas | Same-Day Service | 3D Appliance Repair</title>
+  <meta name="description" content="Same-day or next-day washer & dryer repair in Las Vegas & surrounding areas. $65 diagnostic fee waived with repair. 90-day warranty. Call or text 725-800-2293." />
+
+  <style>
+    :root{
+      --bg:#070b14; --panel:#0c1427; --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
+      --text:#eef2ff; --muted:rgba(238,242,255,.72); --accent:#e11d48; --accent2:#be123c;
+      --radius:18px; --shadow:0 18px 50px rgba(0,0,0,.45); --max:1120px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% -10%, rgba(225,29,72,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(59,130,246,.12), transparent 60%),
+        linear-gradient(180deg, #05070f, var(--bg));
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 14px}
+
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:linear-gradient(180deg, rgba(7,11,20,.92), rgba(7,11,20,.72));
+      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+    }
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{width:56px;height:56px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);}
+    .brand .name{font-weight:900;font-size:16px;white-space:nowrap}
+    .brand .loc{font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:10px}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 14px;border-radius:999px;font-weight:850;
+      border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, rgba(225,29,72,.98), rgba(190,18,60,.95));
+      border-color:rgba(225,29,72,.35);
+      box-shadow:0 16px 35px rgba(225,29,72,.25);
+    }
+
+    .hero{
+      margin-top:14px;border:1px solid rgba(255,255,255,.10);border-radius:26px;overflow:hidden;
+      box-shadow:var(--shadow);position:relative;background:linear-gradient(180deg, #05070f, #070b14);
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:
+        radial-gradient(700px 400px at 20% 10%, rgba(225,29,72,.20), transparent 70%),
+        radial-gradient(700px 400px at 90% 20%, rgba(59,130,246,.12), transparent 70%);
+      pointer-events:none;
+    }
+    .hero-inner{position:relative;padding:26px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center;}
+    .hero h1{font-size:46px;line-height:1.05;text-align:center;letter-spacing:-.4px;margin-bottom:12px;}
+    .hero p{color:var(--muted);font-size:16px;line-height:1.65;max-width:60ch;margin:0 auto;text-align:center;}
+
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;justify-content:center;}
+    .pill{padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);font-weight:750;font-size:13px;}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;justify-content:center;}
+
+    .hero-card{
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      border-radius:22px;padding:18px;backdrop-filter: blur(10px);
+    }
+    .hero-card h3{font-size:16px;margin-bottom:8px}
+    .hero-card ul{padding-left:18px}
+    .hero-card li{margin:6px 0;color:var(--muted)}
+
+    .section{
+      margin-top:14px;border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(12,20,39,.92), rgba(12,20,39,.84));
+      border-radius:18px;box-shadow:var(--shadow);overflow:hidden;
+    }
+    .pad{padding:18px}
+    .section h2{text-align:center;margin-bottom:10px}
+    .sub{text-align:center;color:var(--muted)}
+    ul{padding-left:18px;margin-top:10px}
+    li{margin:7px 0;color:var(--muted)}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+
+    .faq{margin-top:12px}
+    details{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);border-radius:14px;padding:12px 12px;margin-top:10px;}
+    summary{cursor:pointer;font-weight:900;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details p{color:var(--muted);margin-top:8px;line-height:1.65}
+
+    .bottom-cta{
+      position:fixed;left:0;right:0;bottom:0;z-index:60;
+      padding:10px 12px;background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
+      border-top:1px solid rgba(255,255,255,.08);backdrop-filter: blur(10px);
+    }
+    .bottom-cta .inner{
+      max-width:var(--max);margin:0 auto;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
+    .spacer{height:120px}
+    @media (max-width:900px){
+      .hero-inner{grid-template-columns:1fr}
+      .hero h1{font-size:38px}
+      .grid2{grid-template-columns:1fr}
+      .actions a:not(.primary){display:none;}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="/assets/logo.png" alt="3D Appliance Repair logo">
+        <div>
+          <div class="name">3D Appliance Repair</div>
+          <div class="loc">Las Vegas, NV</div>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
+        <a class="btn" href="sms:17258002293">💬 Text</a>
+        <a class="btn primary" href="tel:17258002293">📞 Call</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Washer & Dryer Repair<br>Las Vegas, NV</h1>
+      <p>
+        Same-day or next-day service available. $65 diagnostic fee <strong>waived with repair</strong>.
+        All repairs include a <strong>90-day warranty</strong>.
+      </p>
+
+      <div class="pill-row">
+        <div class="pill">Same-day / next-day availability</div>
+        <div class="pill">$65 diagnostic (waived with repair)</div>
+        <div class="pill">90-day warranty on repairs</div>
+        <div class="pill">Most major brands</div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
+        <a class="btn" href="sms:17258002293">💬 Text Us</a>
+        <a class="btn" href="/">⬅️ Back to Home</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Fast washer & dryer repair</h3>
+      <ul>
+        <li>Washer won’t spin/drain</li>
+        <li>Dryer not heating / long dry times</li>
+        <li>Leaks, noises, error codes</li>
+        <li>Quick scheduling across Las Vegas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="pad">
+    <h2>Common washer & dryer issues we fix</h2>
+
+    <div class="grid2">
+      <div class="section">
+        <div class="pad">
+          <h2 style="margin-bottom:6px">Washer problems</h2>
+          <ul>
+            <li>Won’t drain, spin, or start</li>
+            <li>Leaking water</li>
+            <li>Excessive vibration / banging</li>
+            <li>Not filling or not agitating</li>
+            <li>Error codes and intermittent failures</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="pad">
+          <h2 style="margin-bottom:6px">Dryer problems</h2>
+          <ul>
+            <li>Not heating</li>
+            <li>Takes too long to dry</li>
+            <li>Won’t turn on / stops mid-cycle</li>
+            <li>Loud noises or burning smells</li>
+            <li>Weak airflow (vent issues)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section faq">
+  <div class="pad">
+    <h2>FAQ</h2>
+
+    <details>
+      <summary>Do you offer same-day washer or dryer repair in Las Vegas?</summary>
+      <p>Yes — same-day or next-day appointments are available depending on schedule.</p>
+    </details>
+
+    <details>
+      <summary>How much is the diagnostic fee?</summary>
+      <p>$65, and it’s waived when you proceed with the repair.</p>
+    </details>
+
+    <details>
+      <summary>Do repairs include a warranty?</summary>
+      <p>Yes — all repairs include a 90-day warranty.</p>
+    </details>
+
+    <details>
+      <summary>Can I text to schedule service?</summary>
+      <p>Yes — text <a href="sms:17258002293">725-800-2293</a> anytime.</p>
+    </details>
+  </div>
+</section>
+
+<section class="section">
+  <div class="pad" style="text-align:center">
+    <h2>Need service today?</h2>
+    <p class="sub">Call or text now — we’ll get you scheduled fast.</p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="tel:17258002293">📞 Call</a>
+      <a class="btn" href="sms:17258002293">💬 Text</a>
+      <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
+    </div>
+  </div>
+</section>
+
+<div class="spacer"></div>
+</main>
+
+<div class="bottom-cta">
+  <div class="inner">
+    <a class="btn" href="sms:17258002293">💬 Text</a>
+    <a class="btn primary" href="tel:17258002293">📞 Call</a>
+  </div>
+</div>
+
+</body>
+</html>
