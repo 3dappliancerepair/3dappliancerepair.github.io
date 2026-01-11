@@ -157,6 +157,16 @@
     ul{padding-left:18px;margin-top:10px}
     li{margin:7px 0;color:var(--muted)}
 
+    /* Make service links look like list items but clickable */
+    .service-link{
+      display:inline-block;
+      padding:2px 0;
+      border-bottom:1px dashed rgba(238,242,255,.25);
+    }
+    .service-link:hover{
+      border-bottom-color: rgba(238,242,255,.55);
+    }
+
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 
     /* ---------- FAQ ---------- */
@@ -260,12 +270,12 @@
   <div class="pad">
     <h2>We commonly repair</h2>
     <ul>
-      <li>Refrigerators & freezers</li>
-      <li>Washers & dryers</li>
-      <li>Dishwashers</li>
-      <li>Ovens & stoves</li>
-      <li>Garbage disposals</li>
-      <li>Dryer vents (cleaning service)</li>
+      <li><a class="service-link" href="/refrigerator-repair-las-vegas/">Refrigerators & freezers</a></li>
+      <li><a class="service-link" href="/washer-dryer-repair-las-vegas/">Washers & dryers</a></li>
+      <li><a class="service-link" href="/dishwasher-repair-las-vegas/">Dishwashers</a></li>
+      <li><a class="service-link" href="/oven-stove-repair-las-vegas/">Ovens & stoves</a></li>
+      <li><a class="service-link" href="/garbage-disposal-repair-las-vegas/">Garbage disposals</a></li>
+      <li><a class="service-link" href="/dryer-vent-cleaning-las-vegas/">Dryer vents (cleaning service)</a></li>
     </ul>
   </div>
 </section>
@@ -301,7 +311,6 @@
     <h2>Need service today?</h2>
     <p class="sub">Call or text now — we’ll get you scheduled fast.</p>
 
-    <!-- ONLY CHANGE: Email button -->
     <div class="cta-row">
       <a class="btn primary" href="tel:17258002293">📞 Call</a>
       <a class="btn" href="sms:17258002293">💬 Text</a>
