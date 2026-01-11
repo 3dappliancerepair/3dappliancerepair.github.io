@@ -50,23 +50,20 @@
       gap:12px;padding:12px 0;
     }
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{
-      width:56px;height:56px;border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-    }
+    .brand img{width:56px;height:56px;border-radius:16px}
     .brand .name{font-weight:900;font-size:16px}
     .brand .loc{font-size:12px;color:var(--muted)}
 
+    .actions{display:flex;gap:10px}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
       gap:8px;padding:12px 14px;border-radius:999px;
       font-weight:850;border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.06);
+      white-space:nowrap;
     }
     .btn.primary{
       background:linear-gradient(180deg, rgba(225,29,72,.98), rgba(190,18,60,.95));
-      box-shadow:0 16px 35px rgba(225,29,72,.25);
     }
 
     /* ---------- HERO ---------- */
@@ -74,6 +71,7 @@
       margin-top:14px;
       border:1px solid rgba(255,255,255,.10);
       border-radius:26px;
+      overflow:hidden;
       box-shadow:var(--shadow);
       background:linear-gradient(180deg, #05070f, #070b14);
     }
@@ -82,6 +80,29 @@
       display:grid;
       grid-template-columns:1.1fr .9fr;
       gap:18px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size:46px;
+      line-height:1.05;
+      text-align:center;
+      margin-bottom:12px;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.65;
+      text-align:center;
+      max-width:60ch;
+      margin:0 auto;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      margin-top:18px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
     .hero-card{
@@ -90,17 +111,15 @@
       border-radius:22px;
       padding:18px;
     }
-
+    .hero-card h3{font-size:16px;margin-bottom:8px}
     .hero-card ul{padding-left:18px}
     .hero-card li{margin:6px 0;color:var(--muted)}
 
-    /* ⭐ TRUST BUTTON ROW (ONLY CHANGE HERE) */
     .trust-row{
       display:flex;
       gap:10px;
+      margin-top:14px;
       flex-wrap:wrap;
-      margin-top:12px;
-      justify-content:center;
     }
 
     /* ---------- SECTIONS ---------- */
@@ -111,12 +130,10 @@
       border-radius:18px;
       box-shadow:var(--shadow);
     }
-
     .pad{padding:18px}
     .section h2{text-align:center;margin-bottom:10px}
-    .sub{text-align:center;color:var(--muted)}
 
-    ul{padding-left:18px}
+    ul{padding-left:18px;margin-top:10px}
     li{margin:7px 0;color:var(--muted)}
 
     .service-link{
@@ -124,19 +141,23 @@
       border-bottom:1px dashed rgba(238,242,255,.25);
     }
 
-    /* ---------- BOTTOM CTA ---------- */
     .bottom-cta{
       position:fixed;left:0;right:0;bottom:0;
-      background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
-      border-top:1px solid rgba(255,255,255,.08);
+      padding:10px;
+      background:rgba(7,11,20,.92);
     }
     .bottom-cta .inner{
-      max-width:var(--max);margin:0 auto;
+      max-width:var(--max);margin:auto;
       display:grid;grid-template-columns:1fr 1fr;gap:10px;
-      padding:10px 12px;
     }
 
     .spacer{height:120px}
+
+    @media (max-width:900px){
+      .hero-inner{grid-template-columns:1fr}
+      .hero h1{font-size:38px}
+      .actions a:not(.primary){display:none}
+    }
   </style>
 </head>
 
@@ -146,13 +167,17 @@
   <div class="wrap">
     <div class="topbar-inner">
       <div class="brand">
-        <img src="/assets/logo.png" alt="3D Appliance Repair">
+        <img src="/assets/logo.png" alt="3D Appliance Repair logo">
         <div>
           <div class="name">3D Appliance Repair</div>
           <div class="loc">Las Vegas, NV</div>
         </div>
       </div>
-      <a class="btn primary" href="tel:17258002293">📞 Call</a>
+      <div class="actions">
+        <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
+        <a class="btn" href="sms:17258002293">💬 Text</a>
+        <a class="btn primary" href="tel:17258002293">📞 Call</a>
+      </div>
     </div>
   </div>
 </header>
@@ -161,20 +186,47 @@
 
 <section class="hero">
   <div class="hero-inner">
+    <div>
+      <h1>Appliance Repair<br>Las Vegas, NV</h1>
+      <p>Same-day or next-day service available. $65 diagnostic fee waived with repair. 90-day warranty.</p>
+
+      <div class="cta-row">
+        <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
+        <a class="btn" href="sms:17258002293">💬 Text Us</a>
+      </div>
+    </div>
+
     <div class="hero-card">
       <h3>Fast, honest appliance repair</h3>
       <ul>
         <li>Clear diagnosis and options</li>
         <li>Upfront pricing (no surprises)</li>
         <li>Residential service across Las Vegas</li>
-        <li>Quick scheduling for urgent issues</li>
+        <li>Quick scheduling</li>
       </ul>
 
+      <!-- RESTORED TRUST BUTTONS -->
       <div class="trust-row">
-        <a class="btn" href="#">⭐ Yelp</a>
-        <a class="btn" href="#">🏠 Nextdoor</a>
+        <a class="btn" href="https://www.yelp.com/" target="_blank" rel="noopener">⭐ Yelp</a>
+        <a class="btn" href="https://nextdoor.com/" target="_blank" rel="noopener">🏘️ Nextdoor</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="pad">
+    <h2 style="font-size:22px;font-weight:800;">
+      Choose the appliance you need help with.
+    </h2>
+    <ul>
+      <li><a class="service-link" href="/refrigerator-repair-las-vegas/">Refrigerators & freezers</a></li>
+      <li><a class="service-link" href="/washer-dryer-repair-las-vegas/">Washers & dryers</a></li>
+      <li><a class="service-link" href="/dishwasher-repair-las-vegas/">Dishwashers</a></li>
+      <li><a class="service-link" href="/oven-stove-repair-las-vegas/">Ovens & stoves</a></li>
+      <li><a class="service-link" href="/garbage-disposal-repair-las-vegas/">Garbage disposals</a></li>
+      <li><a class="service-link" href="/dryer-vent-cleaning-las-vegas/">Dryer vents</a></li>
+    </ul>
   </div>
 </section>
 
