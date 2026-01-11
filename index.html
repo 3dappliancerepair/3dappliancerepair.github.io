@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>3D Appliance Repair | Las Vegas, NV</title>
-  <meta name="description" content="Reliable appliance repair in Las Vegas & surrounding areas. Call (725) 800-2293" />
+
+  <title>Appliance Repair Las Vegas | Same-Day Service | 3D Appliance Repair</title>
+  <meta name="description" content="Same-day or next-day appliance repair in Las Vegas & surrounding areas. $65 diagnostic fee waived with repair. 90-day warranty. Call or text 725-800-2293." />
 
   <style>
     :root{
@@ -27,9 +28,10 @@
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 20% -10%, rgba(225,29,72,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(59,130,246,.14), transparent 60%),
+        radial-gradient(900px 500px at 20% -10%, rgba(225,29,72,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(59,130,246,.12), transparent 60%),
         linear-gradient(180deg, #05070f, var(--bg));
+      overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
@@ -47,15 +49,13 @@
       display:flex;align-items:center;justify-content:space-between;
       gap:12px;padding:12px 0;
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;
-    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
     .brand img{
       width:56px;height:56px;border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
     }
-    .brand .name{font-weight:900;font-size:16px}
+    .brand .name{font-weight:900;font-size:16px;white-space:nowrap}
     .brand .loc{font-size:12px;color:var(--muted)}
     .actions{display:flex;gap:10px}
 
@@ -80,14 +80,15 @@
       overflow:hidden;
       box-shadow:var(--shadow);
       position:relative;
+      background:linear-gradient(180deg, #05070f, #070b14);
     }
     .hero::before{
       content:"";
       position:absolute;inset:0;
       background:
-        radial-gradient(700px 400px at 20% 10%, rgba(225,29,72,.25), transparent 60%),
-        radial-gradient(700px 400px at 90% 20%, rgba(59,130,246,.18), transparent 60%),
-        linear-gradient(180deg, #05070f, #070b14);
+        radial-gradient(700px 400px at 20% 10%, rgba(225,29,72,.20), transparent 70%),
+        radial-gradient(700px 400px at 90% 20%, rgba(59,130,246,.12), transparent 70%);
+      pointer-events:none;
     }
     .hero-inner{
       position:relative;
@@ -97,7 +98,6 @@
       gap:18px;
       align-items:center;
     }
-
     .hero h1{
       font-size:46px;
       line-height:1.05;
@@ -109,7 +109,7 @@
       color:var(--muted);
       font-size:16px;
       line-height:1.65;
-      max-width:52ch;
+      max-width:60ch;
       margin:0 auto;
       text-align:center;
     }
@@ -130,11 +130,6 @@
       margin-top:18px;justify-content:center;
     }
 
-    .social-row{
-      display:flex;
-      gap:12px;
-    }
-
     .hero-card{
       border:1px solid rgba(255,255,255,.10);
       background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
@@ -150,7 +145,7 @@
     .section{
       margin-top:14px;
       border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      background:linear-gradient(180deg, rgba(12,20,39,.92), rgba(12,20,39,.84));
       border-radius:18px;
       box-shadow:var(--shadow);
       overflow:hidden;
@@ -162,16 +157,30 @@
     ul{padding-left:18px;margin-top:10px}
     li{margin:7px 0;color:var(--muted)}
 
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-    .figure img{width:100%;height:260px;object-fit:cover}
-    .cap{text-align:center;padding:10px;color:var(--muted);font-weight:700}
-
-    .img-frame{
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      border-radius:16px;
-      overflow:hidden;
+    /* Make service links look like list items but clickable */
+    .service-link{
+      display:inline-block;
+      padding:2px 0;
+      border-bottom:1px dashed rgba(238,242,255,.25);
     }
+    .service-link:hover{
+      border-bottom-color: rgba(238,242,255,.55);
+    }
+
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+
+    /* ---------- FAQ ---------- */
+    .faq{margin-top:12px}
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      border-radius:14px;
+      padding:12px 12px;
+      margin-top:10px;
+    }
+    summary{cursor:pointer;font-weight:900;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details p{color:var(--muted);margin-top:8px;line-height:1.65}
 
     /* ---------- BOTTOM CTA ---------- */
     .bottom-cta{
@@ -179,21 +188,22 @@
       padding:10px 12px;
       background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
       border-top:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
     }
     .bottom-cta .inner{
       max-width:var(--max);margin:0 auto;
-      display:flex;gap:10px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
     }
-    .bottom-cta a{flex:1}
 
-    .spacer{height:90px}
+    .spacer{height:120px}
 
-    /* ---------- MOBILE ---------- */
     @media (max-width:900px){
       .hero-inner{grid-template-columns:1fr}
       .hero h1{font-size:38px}
       .grid2{grid-template-columns:1fr}
-      .figure img{height:220px}
+      .actions a:not(.primary){display:none;}
     }
   </style>
 </head>
@@ -204,7 +214,7 @@
   <div class="wrap">
     <div class="topbar-inner">
       <div class="brand">
-        <img src="assets/logo.png" alt="3D Appliance Repair logo">
+        <img src="/assets/logo.png" alt="3D Appliance Repair logo">
         <div>
           <div class="name">3D Appliance Repair</div>
           <div class="loc">Las Vegas, NV</div>
@@ -212,6 +222,7 @@
       </div>
       <div class="actions">
         <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
+        <a class="btn" href="sms:17258002293">💬 Text</a>
         <a class="btn primary" href="tel:17258002293">📞 Call</a>
       </div>
     </div>
@@ -223,79 +234,117 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <h1>3D Appliance Repair<br>Service That Stands Out</h1>
-      <p>Reliable, affordable appliance repair in Las Vegas & surrounding areas. Honest pricing, quality work, and quick scheduling.</p>
+      <h1>Appliance Repair<br>Las Vegas, NV</h1>
+      <p>
+        Same-day or next-day service available. $65 diagnostic fee <strong>waived with repair</strong>.
+        All repairs include a <strong>90-day warranty</strong>.
+      </p>
 
       <div class="pill-row">
         <div class="pill">Same-day / next-day availability</div>
-        <div class="pill">Diagnostics to full repairs</div>
+        <div class="pill">$65 diagnostic (waived with repair)</div>
+        <div class="pill">90-day warranty on repairs</div>
         <div class="pill">Most major brands</div>
       </div>
 
       <div class="cta-row">
         <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
-
-        <div class="social-row">
-          <a class="btn" href="https://yelp.to/vCpOrAb_g_" target="_blank" rel="noopener">⭐ Yelp</a>
-          <a class="btn" href="http://Tinyurl.com/3DApplianceRepair" target="_blank" rel="noopener">⭐ Nextdoor</a>
-        </div>
-
-        <a class="btn" href="#coupon">$25 Off First Time Repairs</a>
-        <a class="btn" href="#services">View Services</a>
+        <a class="btn" href="sms:17258002293">💬 Text Us</a>
+        <a class="btn" href="/">⬅️ Back to Home</a>
       </div>
     </div>
 
     <div class="hero-card">
-      <h3>Why customers choose us</h3>
+      <h3>Fast, honest appliance repair</h3>
       <ul>
-        <li>Fast response & scheduling</li>
-        <li>Honest pricing (no surprises)</li>
-        <li>Quality work you can trust</li>
-        <li>Serving Las Vegas & Henderson</li>
+        <li>Clear diagnosis and options</li>
+        <li>Upfront pricing (no surprises)</li>
+        <li>Residential service across Las Vegas</li>
+        <li>Quick scheduling for urgent issues</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section">
+<!-- ONLY CHANGE: Make the existing Services list clickable -->
+<section class="section" id="services">
   <div class="pad">
     <h2>Services</h2>
     <p class="sub">We repair and service all major household appliances.</p>
     <ul>
-      <li>Refrigerator Repair</li>
-      <li>Washer & Dryer Repair</li>
-      <li>Oven & Range Repair</li>
-      <li>Dishwasher Repair</li>
-      <li>Garbage Disposals</li>
-      <li>Dryer Vent Cleanings</li>
+      <li><a class="service-link" href="/refrigerator-repair-las-vegas/">Refrigerator Repair</a></li>
+      <li><a class="service-link" href="/washer-dryer-repair-las-vegas/">Washer &amp; Dryer Repair</a></li>
+      <li><a class="service-link" href="/oven-stove-repair-las-vegas/">Oven &amp; Range Repair</a></li>
+      <li><a class="service-link" href="/dishwasher-repair-las-vegas/">Dishwasher Repair</a></li>
+      <li><a class="service-link" href="/garbage-disposal-repair-las-vegas/">Garbage Disposals</a></li>
+      <li><a class="service-link" href="/dryer-vent-cleaning-las-vegas/">Dryer Vent Cleanings</a></li>
+    </ul>
+  </div>
+</section>
+<!-- END ONLY CHANGE -->
+
+<section class="section">
+  <div class="pad">
+    <h2>We commonly repair</h2>
+    <ul>
+      <li><a class="service-link" href="/refrigerator-repair-las-vegas/">Refrigerators & freezers</a></li>
+      <li><a class="service-link" href="/washer-dryer-repair-las-vegas/">Washers & dryers</a></li>
+      <li><a class="service-link" href="/dishwasher-repair-las-vegas/">Dishwashers</a></li>
+      <li><a class="service-link" href="/oven-stove-repair-las-vegas/">Ovens & stoves</a></li>
+      <li><a class="service-link" href="/garbage-disposal-repair-las-vegas/">Garbage disposals</a></li>
+      <li><a class="service-link" href="/dryer-vent-cleaning-las-vegas/">Dryer vents (cleaning service)</a></li>
     </ul>
   </div>
 </section>
 
-<!-- SERVICE PHOTOS -->
-<section class="grid2">
-  <div class="section figure">
-    <img src="assets/van.png" alt="3D Appliance Repair service van">
-    <div class="cap">Text message for rapid response</div>
-  </div>
+<section class="section faq">
+  <div class="pad">
+    <h2>FAQ</h2>
 
-  <div class="section figure">
-    <img src="assets/technician.png" alt="Appliance repair technician helping a customer">
-    <div class="cap">Professional, friendly in-home service</div>
+    <details>
+      <summary>Do you offer same-day appliance repair in Las Vegas?</summary>
+      <p>Yes — same-day or next-day service is available.</p>
+    </details>
+
+    <details>
+      <summary>How much is the diagnostic fee?</summary>
+      <p>$65, waived with repair.</p>
+    </details>
+
+    <details>
+      <summary>Do repairs include a warranty?</summary>
+      <p>Yes — all repairs include a 90-day warranty.</p>
+    </details>
+
+    <details>
+      <summary>Do you accept text messages for scheduling?</summary>
+      <p>Yes — text us anytime.</p>
+    </details>
   </div>
 </section>
-  
+
+<section class="section">
+  <div class="pad" style="text-align:center">
+    <h2>Need service today?</h2>
+    <p class="sub">Call or text now — we’ll get you scheduled fast.</p>
+
+    <div class="cta-row">
+      <a class="btn primary" href="tel:17258002293">📞 Call</a>
+      <a class="btn" href="sms:17258002293">💬 Text</a>
+      <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
+    </div>
+  </div>
+</section>
+
 <div class="spacer"></div>
 </main>
 
 <div class="bottom-cta">
   <div class="inner">
-    <a class="btn" href="mailto:3dappliancerepairlv@gmail.com">✉️ Email</a>
-    <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
+    <a class="btn" href="sms:17258002293">💬 Text</a>
+    <a class="btn primary" href="tel:17258002293">📞 Call</a>
   </div>
 </div>
 
-<meta name="trustpilot-one-time-domain-verification-id" content="878ea808-d060-409a-b70b-bdb69b5ed099"/>
 </body>
 </html>
