@@ -38,7 +38,6 @@
     img{max-width:100%;display:block}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 14px}
 
-    /* ---------- HEADER ---------- */
     .topbar{
       position:sticky;top:0;z-index:50;
       background:linear-gradient(180deg, rgba(7,11,20,.92), rgba(7,11,20,.72));
@@ -60,69 +59,11 @@
       gap:8px;padding:12px 14px;border-radius:999px;
       font-weight:850;border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.06);
-      white-space:nowrap;
     }
     .btn.primary{
       background:linear-gradient(180deg, rgba(225,29,72,.98), rgba(190,18,60,.95));
     }
 
-    /* ---------- HERO ---------- */
-    .hero{
-      margin-top:14px;
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      background:linear-gradient(180deg, #05070f, #070b14);
-    }
-    .hero-inner{
-      padding:26px;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:18px;
-      align-items:center;
-    }
-    .hero h1{
-      font-size:46px;
-      line-height:1.05;
-      text-align:center;
-      margin-bottom:12px;
-    }
-    .hero p{
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.65;
-      text-align:center;
-      max-width:60ch;
-      margin:0 auto;
-    }
-
-    .cta-row{
-      display:flex;
-      gap:12px;
-      margin-top:18px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .hero-card{
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
-      border-radius:22px;
-      padding:18px;
-    }
-    .hero-card h3{font-size:16px;margin-bottom:8px}
-    .hero-card ul{padding-left:18px}
-    .hero-card li{margin:6px 0;color:var(--muted)}
-
-    .trust-row{
-      display:flex;
-      gap:10px;
-      margin-top:14px;
-      flex-wrap:wrap;
-    }
-
-    /* ---------- SECTIONS ---------- */
     .section{
       margin-top:14px;
       border:1px solid rgba(255,255,255,.10);
@@ -152,12 +93,6 @@
     }
 
     .spacer{height:120px}
-
-    @media (max-width:900px){
-      .hero-inner{grid-template-columns:1fr}
-      .hero h1{font-size:38px}
-      .actions a:not(.primary){display:none}
-    }
   </style>
 </head>
 
@@ -184,33 +119,17 @@
 
 <main class="wrap">
 
-<section class="hero">
-  <div class="hero-inner">
-    <div>
-      <h1>Appliance Repair<br>Las Vegas, NV</h1>
-      <p>Same-day or next-day service available. $65 diagnostic fee waived with repair. 90-day warranty.</p>
-
-      <div class="cta-row">
-        <a class="btn primary" href="tel:17258002293">📞 Call (725) 800-2293</a>
-        <a class="btn" href="sms:17258002293">💬 Text Us</a>
-      </div>
-    </div>
-
-    <div class="hero-card">
-      <h3>Fast, honest appliance repair</h3>
-      <ul>
-        <li>Clear diagnosis and options</li>
-        <li>Upfront pricing (no surprises)</li>
-        <li>Residential service across Las Vegas</li>
-        <li>Quick scheduling</li>
-      </ul>
-
-      <!-- RESTORED TRUST BUTTONS -->
-      <div class="trust-row">
-        <a class="btn" href="https://www.yelp.com/" target="_blank" rel="noopener">⭐ Yelp</a>
-        <a class="btn" href="https://nextdoor.com/" target="_blank" rel="noopener">🏘️ Nextdoor</a>
-      </div>
-    </div>
+<section class="section">
+  <div class="pad">
+    <h2>Services</h2>
+    <ul>
+      <li><a class="service-link" href="/refrigerator-repair-las-vegas/">Refrigerator Repair</a></li>
+      <li><a class="service-link" href="/washer-dryer-repair-las-vegas/">Washer & Dryer Repair</a></li>
+      <li><a class="service-link" href="/oven-stove-repair-las-vegas/">Oven & Range Repair</a></li>
+      <li><a class="service-link" href="/dishwasher-repair-las-vegas/">Dishwasher Repair</a></li>
+      <li><a class="service-link" href="/garbage-disposal-repair-las-vegas/">Garbage Disposals</a></li>
+      <li><a class="service-link" href="/dryer-vent-cleaning-las-vegas/">Dryer Vent Cleanings</a></li>
+    </ul>
   </div>
 </section>
 
