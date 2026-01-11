@@ -141,6 +141,15 @@
     .hero-card ul{padding-left:18px}
     .hero-card li{margin:6px 0;color:var(--muted)}
 
+    /* ONLY ADDITION: Yelp/Nextdoor button row styling (does not affect existing layout) */
+    .review-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
     /* ---------- SECTIONS ---------- */
     .section{
       margin-top:14px;
@@ -252,6 +261,13 @@
         <a class="btn" href="sms:17258002293">💬 Text Us</a>
         <a class="btn" href="/">⬅️ Back to Home</a>
       </div>
+
+      <!-- ONLY ADDITION: Yelp + Nextdoor pill buttons directly under Text Us / Back to Home -->
+      <div class="review-row" aria-label="Review platforms">
+        <a class="btn" href="https://yelp.to/EStOxZgdNM" target="_blank" rel="noopener noreferrer">⭐ Yelp</a>
+        <a class="btn" href="https://nextdoor.com/page/3d-appliance-repair-las-vegas-nv?utm_campaign=1768168262362&share_action_id=4653051c-7884-40be-a797-5634a38abef3" target="_blank" rel="noopener noreferrer">🏠 Nextdoor</a>
+      </div>
+      <!-- END ONLY ADDITION -->
     </div>
 
     <div class="hero-card">
