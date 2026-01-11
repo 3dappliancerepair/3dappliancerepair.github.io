@@ -24,13 +24,17 @@
 
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
+
+    /* Page background */
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 20% -10%, rgba(225,29,72,.18), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(59,130,246,.14), transparent 60%),
+        radial-gradient(900px 500px at 20% -10%, rgba(225,29,72,.14), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(59,130,246,.12), transparent 60%),
         linear-gradient(180deg, #05070f, var(--bg));
+      /* prevent any horizontal bleed on mobile */
+      overflow-x:hidden;
     }
 
     a{color:inherit;text-decoration:none}
@@ -50,13 +54,14 @@
     }
     .brand{
       display:flex;align-items:center;gap:12px;
+      min-width:0; /* keep it from forcing overflow on mobile */
     }
     .brand img{
       width:56px;height:56px;border-radius:16px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
     }
-    .brand .name{font-weight:900;font-size:16px}
+    .brand .name{font-weight:900;font-size:16px;white-space:nowrap}
     .brand .loc{font-size:12px;color:var(--muted)}
     .actions{display:flex;gap:10px}
 
@@ -82,14 +87,18 @@
       box-shadow:var(--shadow);
       position:relative;
     }
+
+    /* FIX: soften/fade hero background so it doesn't "cut off" and show a stripe on scroll */
     .hero::before{
       content:"";
       position:absolute;inset:0;
       background:
-        radial-gradient(700px 400px at 20% 10%, rgba(225,29,72,.25), transparent 60%),
-        radial-gradient(700px 400px at 90% 20%, rgba(59,130,246,.18), transparent 60%),
-        linear-gradient(180deg, #05070f, #070b14);
+        radial-gradient(700px 400px at 20% 10%, rgba(225,29,72,.22), transparent 65%),
+        radial-gradient(700px 400px at 90% 20%, rgba(59,130,246,.14), transparent 65%),
+        linear-gradient(180deg, #05070f 0%, #070b14 70%, rgba(7,11,20,0) 100%);
+      pointer-events:none;
     }
+
     .hero-inner{
       position:relative;
       padding:26px;
@@ -131,11 +140,6 @@
       margin-top:18px;justify-content:center;
     }
 
-    .social-row{
-      display:flex;
-      gap:12px;
-    }
-
     .hero-card{
       border:1px solid rgba(255,255,255,.10);
       background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
@@ -155,6 +159,8 @@
       border-radius:18px;
       box-shadow:var(--shadow);
       overflow:hidden;
+      position:relative;
+      isolation:isolate; /* helps prevent background blending artifacts */
     }
     .pad{padding:18px}
     .section h2{text-align:center;margin-bottom:10px}
@@ -164,8 +170,6 @@
     li{margin:7px 0;color:var(--muted)}
 
     .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-    .figure img{width:100%;height:260px;object-fit:cover}
-    .cap{text-align:center;padding:10px;color:var(--muted);font-weight:700}
 
     /* ---------- FAQ ---------- */
     .faq{margin-top:12px}
@@ -190,6 +194,7 @@
       padding:10px 12px;
       background:linear-gradient(180deg, rgba(7,11,20,.15), rgba(7,11,20,.92));
       border-top:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
     }
     .bottom-cta .inner{
       max-width:var(--max);margin:0 auto;
@@ -197,15 +202,24 @@
     }
     .bottom-cta a{flex:1}
 
-    .spacer{height:90px}
+    .spacer{height:96px}
 
     /* ---------- MOBILE ---------- */
     @media (max-width:900px){
       .hero-inner{grid-template-columns:1fr}
       .hero h1{font-size:38px}
       .grid2{grid-template-columns:1fr}
-      .figure img{height:220px}
+
+      /* FIX: reduce clutter — keep only ONE CTA up top on mobile */
+      .actions a:not(.primary){display:none;}
     }
+
+    /* Optional: if you want NO buttons in header on mobile (uncomment) */
+    /*
+    @media (max-width:900px){
+      .actions{display:none;}
+    }
+    */
   </style>
 </head>
 
@@ -301,7 +315,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
