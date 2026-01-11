@@ -154,6 +154,12 @@
     .section h2{text-align:center;margin-bottom:10px}
     .sub{text-align:center;color:var(--muted)}
 
+    /* ONLY CHANGE: smaller font for "Choose the appliance..." title */
+    .helper-title{
+      font-size:24px;
+      font-weight:800;
+    }
+
     ul{padding-left:18px;margin-top:10px}
     li{margin:7px 0;color:var(--muted)}
 
@@ -285,7 +291,8 @@
 
 <section class="section">
   <div class="pad">
-    <h2>Choose the appliance you need help with.</h2>
+    <!-- ONLY CHANGE: add class to reduce font size for this heading only -->
+    <h2 class="helper-title">Choose the appliance you need help with.</h2>
     <ul>
       <li><a class="service-link" href="/refrigerator-repair-las-vegas/">Refrigerators & freezers</a></li>
       <li><a class="service-link" href="/washer-dryer-repair-las-vegas/">Washers & dryers</a></li>
